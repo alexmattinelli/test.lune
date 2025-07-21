@@ -1,0 +1,130 @@
+:root {
+    --roxo-escuro: #4B0082;
+    --roxo-vibrante: #8A2BE2;
+    --roxo-neon: #DA70D6;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Rubik', sans-serif;
+    color: white;
+}
+
+/* Vídeo de fundo */
+#bg-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -2;
+    opacity: 0.15;
+}
+
+/* Efeito de partículas */
+#particle-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.main-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, var(--roxo-vibrante), var(--roxo-neon));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.chat-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: rgba(30, 0, 60, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid var(--roxo-neon);
+    box-shadow: 0 0 30px rgba(138, 43, 226, 0.5);
+    overflow: hidden;
+}
+
+.message-box {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.input-container {
+    display: flex;
+    padding: 15px;
+    background: rgba(75, 0, 130, 0.5);
+    border-top: 1px solid var(--roxo-neon);
+}
+
+textarea {
+    flex: 1;
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1rem;
+    resize: none;
+}
+
+#send-btn {
+    position: relative;
+    background: linear-gradient(45deg, var(--roxo-escuro), var(--roxo-vibrante));
+    border: none;
+    color: white;
+    padding: 0 30px;
+    margin-left: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.btn-light {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to bottom right,
+        transparent,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent,
+        transparent
+    );
+    transform: rotate(30deg);
+    transition: all 0.5s;
+}
+
+#send-btn:hover {
+    transform: translateY(-3px);
+}
+
+#send-btn:hover .btn-light {
+    left: 100%;
+}
